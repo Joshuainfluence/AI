@@ -2,6 +2,9 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
+import time
+
+start = time.time()
 
 # load a sample dataset (flowers data)
 iris = load_iris()
@@ -18,5 +21,8 @@ model.fit(x_train, y_train)
 # predict on test data
 y_pred = model.predict(x_test)
 
+end = time.time()
+
 # Evaluate 
 print("Model accuracy:", accuracy_score(y_test, y_pred))
+print("Prediction time: ", end - start)

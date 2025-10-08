@@ -12,12 +12,12 @@ X = iris.data[:, :2] #use sepal lenght and sepal width only
 y = iris.target
 
 # split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 
 # Models
 tree = DecisionTreeClassifier().fit(X_train, y_train)
-knn = KNeighborsClassifier(n_neighbors=3).fit(X_train, y_train)
+knn = KNeighborsClassifier(n_neighbors=10).fit(X_train, y_train)
 
 # create a meshgrid (to plot all possible x-y conmbination)
 x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
